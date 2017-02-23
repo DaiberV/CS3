@@ -1,0 +1,1 @@
+SELECT ini.name FROM <<ORIGEN>>.sys.Tables as ini order by ini.name;
