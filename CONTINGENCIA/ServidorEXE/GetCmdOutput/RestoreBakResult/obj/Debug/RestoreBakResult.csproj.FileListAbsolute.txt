@@ -1,0 +1,6 @@
+C:\Users\daiber\Documents\GetCmdOutput\RestoreBakResult\bin\Debug\RestoreBakResult.exe.config
+C:\Users\daiber\Documents\GetCmdOutput\RestoreBakResult\bin\Debug\RestoreBakResult.exe
+C:\Users\daiber\Documents\GetCmdOutput\RestoreBakResult\bin\Debug\RestoreBakResult.pdb
+C:\Users\daiber\Documents\GetCmdOutput\RestoreBakResult\obj\Debug\RestoreBakResult.csprojResolveAssemblyReference.cache
+C:\Users\daiber\Documents\GetCmdOutput\RestoreBakResult\obj\Debug\RestoreBakResult.exe
+C:\Users\daiber\Documents\GetCmdOutput\RestoreBakResult\obj\Debug\RestoreBakResult.pdb

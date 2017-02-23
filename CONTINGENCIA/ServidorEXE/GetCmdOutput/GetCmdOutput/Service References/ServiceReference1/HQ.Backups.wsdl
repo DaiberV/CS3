@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="CS3HQ" xmlns:wsdlns="CS3HQ" name="HQ.Backups.WsNotificacionBackup" targetNamespace="CS3HQ" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" elementFormDefault="qualified" targetNamespace="CS3HQ">
+      <xsd:complexType name="SdtBackup">
+        <xsd:sequence>
+          <xsd:element name="ClieCod" type="xsd:string" />
+          <xsd:element name="ProdCod" type="xsd:string" />
+          <xsd:element name="BckNom" type="xsd:string" />
+          <xsd:element name="BckEst" type="xsd:boolean" />
+          <xsd:element name="BckMsg" type="xsd:string" />
+          <xsd:element name="BckTam" type="xsd:long" />
+          <xsd:element name="BckGitRemote" type="xsd:string" />
+          <xsd:element name="BckGitCommit" type="xsd:string" />
+          <xsd:element name="BckGitBranch" type="xsd:string" />
+          <xsd:element name="BckLastReorg" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="HQ.Backups.WsNotificacionBackup.Execute">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Sdtbackup" type="wsdlns:SdtBackup" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="HQ.Backups.WsNotificacionBackup.ExecuteResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="retval" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types>
+  <message name="HQ.Backups.WsNotificacionBackup.ExecuteSoapIn">
+    <part name="parameters" element="wsdlns:HQ.Backups.WsNotificacionBackup.Execute" />
+  </message>
+  <message name="HQ.Backups.WsNotificacionBackup.ExecuteSoapOut">
+    <part name="parameters" element="wsdlns:HQ.Backups.WsNotificacionBackup.ExecuteResponse" />
+  </message>
+  <portType name="HQ.Backups.WsNotificacionBackupSoapPort">
+    <operation name="Execute">
+      <input message="wsdlns:HQ.Backups.WsNotificacionBackup.ExecuteSoapIn" />
+      <output message="wsdlns:HQ.Backups.WsNotificacionBackup.ExecuteSoapOut" />
+    </operation>
+  </portType>
+  <binding name="HQ.Backups.WsNotificacionBackupSoapBinding" type="wsdlns:HQ.Backups.WsNotificacionBackupSoapPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="Execute">
+      <soap:operation soapAction="CS3HQaction/hq.backups.AWSNOTIFICACIONBACKUP.Execute" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="HQ.Backups.WsNotificacionBackup">
+    <port name="HQ.Backups.WsNotificacionBackupSoapPort" binding="wsdlns:HQ.Backups.WsNotificacionBackupSoapBinding">
+      <soap:address location="http://go.comercializadora-s3.com:8022/hq.backups.awsnotificacionbackup.aspx" />
+    </port>
+  </service>
+</definitions>

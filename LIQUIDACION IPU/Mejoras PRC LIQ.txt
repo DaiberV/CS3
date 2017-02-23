@@ -1,0 +1,4 @@
+1. Manejar Aseguramiento de Proceso de Liquidacion (No permitir emitir ni pagar nada mientras no se asegure).
+2. Agregar Area de Terreno en Listados de Comparacion de Liquidacion
+3. Santo Tomas (Interfaz Siiafe Anterior)
+4. Ipiales Migracion ICAT + RETEICAT + APLICADOR PAGOS CORRECCIONES (TOOLTIPS DECLARACIONES)

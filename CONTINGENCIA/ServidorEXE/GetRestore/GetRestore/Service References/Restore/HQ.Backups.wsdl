@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="CS3HQ" xmlns:wsdlns="CS3HQ" name="HQ.Backups.WsRestoreBackup" targetNamespace="CS3HQ" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" elementFormDefault="qualified" targetNamespace="CS3HQ">
+      <xsd:complexType name="SdtRestore">
+        <xsd:sequence>
+          <xsd:element name="BckNom" type="xsd:string" />
+          <xsd:element name="BckEst" type="xsd:boolean" />
+          <xsd:element name="BckMsg" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="HQ.Backups.WsRestoreBackup.Execute">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Sdtrestore" type="wsdlns:SdtRestore" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="HQ.Backups.WsRestoreBackup.ExecuteResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="retval" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types>
+  <message name="HQ.Backups.WsRestoreBackup.ExecuteSoapIn">
+    <part name="parameters" element="wsdlns:HQ.Backups.WsRestoreBackup.Execute" />
+  </message>
+  <message name="HQ.Backups.WsRestoreBackup.ExecuteSoapOut">
+    <part name="parameters" element="wsdlns:HQ.Backups.WsRestoreBackup.ExecuteResponse" />
+  </message>
+  <portType name="HQ.Backups.WsRestoreBackupSoapPort">
+    <operation name="Execute">
+      <input message="wsdlns:HQ.Backups.WsRestoreBackup.ExecuteSoapIn" />
+      <output message="wsdlns:HQ.Backups.WsRestoreBackup.ExecuteSoapOut" />
+    </operation>
+  </portType>
+  <binding name="HQ.Backups.WsRestoreBackupSoapBinding" type="wsdlns:HQ.Backups.WsRestoreBackupSoapPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="Execute">
+      <soap:operation soapAction="CS3HQaction/hq.backups.AWSRESTOREBACKUP.Execute" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="HQ.Backups.WsRestoreBackup">
+    <port name="HQ.Backups.WsRestoreBackupSoapPort" binding="wsdlns:HQ.Backups.WsRestoreBackupSoapBinding">
+      <soap:address location="http://go.comercializadora-s3.com:8022/hq.backups.awsrestorebackup.aspx" />
+    </port>
+  </service>
+</definitions>

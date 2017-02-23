@@ -1,0 +1,9 @@
+F:\Work\DLLs\Tests\GetCmdOutput\GetCmdOutput\bin\Debug\GetCmdOutput.exe
+F:\Work\DLLs\Tests\GetCmdOutput\GetCmdOutput\bin\Debug\GetCmdOutput.pdb
+F:\Work\DLLs\Tests\GetCmdOutput\GetCmdOutput\obj\x86\Debug\GetCmdOutput.exe
+F:\Work\DLLs\Tests\GetCmdOutput\GetCmdOutput\obj\x86\Debug\GetCmdOutput.pdb
+C:\Users\daiber\Documents\GetCmdOutput\GetCmdOutput\bin\Debug\GetCmdOutput.exe.config
+C:\Users\daiber\Documents\GetCmdOutput\GetCmdOutput\bin\Debug\GetCmdOutput.exe
+C:\Users\daiber\Documents\GetCmdOutput\GetCmdOutput\bin\Debug\GetCmdOutput.pdb
+C:\Users\daiber\Documents\GetCmdOutput\GetCmdOutput\obj\x86\Debug\GetCmdOutput.exe
+C:\Users\daiber\Documents\GetCmdOutput\GetCmdOutput\obj\x86\Debug\GetCmdOutput.pdb

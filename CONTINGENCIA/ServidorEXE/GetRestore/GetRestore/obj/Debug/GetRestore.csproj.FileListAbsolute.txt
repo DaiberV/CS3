@@ -1,0 +1,6 @@
+c:\users\daiber\documents\GetRestore\GetRestore\bin\Debug\GetRestore.exe.config
+c:\users\daiber\documents\GetRestore\GetRestore\bin\Debug\GetRestore.exe
+c:\users\daiber\documents\GetRestore\GetRestore\bin\Debug\GetRestore.pdb
+c:\users\daiber\documents\GetRestore\GetRestore\obj\Debug\GetRestore.csprojResolveAssemblyReference.cache
+c:\users\daiber\documents\GetRestore\GetRestore\obj\Debug\GetRestore.exe
+c:\users\daiber\documents\GetRestore\GetRestore\obj\Debug\GetRestore.pdb

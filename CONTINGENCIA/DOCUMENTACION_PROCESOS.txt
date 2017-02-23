@@ -1,0 +1,50 @@
+#################################################DOCUMENTACION CONTINGENCIA####################################################################
+1. Se cuenta con 4 archivos .bat que se tienen que establecer en ubicaciones especificas estos archivos son los encargados
+de generar el backup, comprimirlo, moverlo, enviarlo por servicio FTP y comprobar que se genere correctamente los archivos son:
+
+	1.1 PARAMETROSBAK.bat 		= este archivo se encarga de recopilar la informacion parametrizada de la alcaldia
+		1.1.1 Parametros:
+			RUTABACKUPS	= ruta en donde se guardaran los backups generados por la base de datos						
+			BASEDEDATOS = nombre de la base de datos del producto
+			RUTAREORG	= ruta en donde se encuentra el archivo de la ultima reorganizacion	
+			RUTAFIN		= ruta final donde se guardara el archivo .zip del backup en cuestion
+			USUARIO		= usuario ftp del cliente(nombreCliente_producto)
+			CLAVE		= clave de usuario ftp
+			IPFTP		= dominio de servidor ftp 
+			PUERTO		= puerto del servidor ftp
+			TIPO		= nombre del producto
+				1.1.2 RUTAS:
+					1.1.2.1 Rutas con espacios = En el momento de parametrizar las rutas es sumamente nesesario verificar la ruta por lina de comando
+							en el caso que dicha ruta tenga espacios en blanco ejemplo: (D:\Web Produccion\Clientes\SIIAFE_AlcSantoTomas\Reorgs\) es
+							nesesario colocarlo entre "".
+					1.1.2.2 Rutas en diferentes particiones = Por lo general los sistemas operativos Windows tienen como ruta por defecto el disco "C:\"
+							sin embargo si se desea trabajar en un disco particionado y se requiere trabajar en el disco "F:\" es nesesario agregarle a todas 
+							las rutas "/d" para que este puntero dentro de la secuencia de comando se mueva.								
+	1.2 BAK.bat 				= este archivo se encarga tanto de generar como comprimir y por ultimo inspeccionar que no halla error en el bak
+	1.3 FTP.bat 				= este archivo se encarga de tomar la informacion parametrizada y enviar el archivo a servidor de la empresa
+	1.4 WEBSERVICE.bat			= este archivo se encarga de tomar la informacion del backup y del cliente y enviarlo al servicio web de la empresa
+
+	1.5 7-Zip este aplicativo debe estar en la "RUTABACKUPS" nesesariamente para que la compresion sea satisfactoria.
+
+2. CLIENTE WEB:
+	2.1 CLIENTES	= los clientes que se parametricen el "USUARIO" deben ser los codigos de los clientes creados en el sitio Web "HQ"
+					  adicional a esto tambien se tiene que crear el mismo usuario en el servidor FTP del repositorio remoto en el caso 
+					  actual "go.comercializadora-s3.com".
+	2.2 PRODUCTOS	= Los productos deben estar creados son actualmente 4 los manejados SIIAFE,SIIAFE2014,SWIT y SWIT2012, estos productos 
+					  deben estar creados y asociados dentro del cliente web en el servidor remoto, para llevar a cabo la ejecucion del proceso.
+3. SERVIDOR:
+	3.1	PARAMETROSRESTORE.bat 	= 	En este archivo bacth se parametriza las rutas en los que los comprimidos ya recividos via FTP se descomprimen y se restauran
+									en la base de datos, y son movidos a la carpeta final en la cual todos los comprimidos son transferidos desde el servidor
+									remoto hasta los servidores de la empresa.
+		3.1.1 PARAMETROS:
+			"PRIMERARUTA"		=	En la primera ruta del archivo se encuentra la ruta en la que se trabajara con los dos archivos de restauracion de la base de datos.
+			RUTA				=	Ruta en donde va a trabajar nuestro sistema de restauracion, confirmacion y eliminacion del backup, es nesesario
+									asegurarse que sea la misma ruta en donde se encuentre este archivo batch.
+			RURARESTOREFINAL	=	Ruta en la que se guardara finalmente el archivo .zip en el repositorio remoto luego de la restauracion, de esta forma se centralizaran
+									los archivos .zip y se descargaran al servidor local mediante un sistema que ya esta implementado en la empresa.
+			RUTATEMP			=	Esta es la ruta en donde se descomprime el archivo para luego restaurarse.
+			RUTAMASTER			=	Esta ruta es de suma importancia en esta es la ruta del motor de base de datos donde se guardan los archivos .mdf y .ldf
+			
+
+					  
+
