@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.IO;
+using System.Net;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
 using System.Text;
@@ -14,6 +15,9 @@ namespace ConsoleApplication1
         {
             Dictionary<string, List<string>> ListaScripts = new Dictionary<string, List<string>>();
             string Root = System.IO.Directory.GetCurrentDirectory();
+
+            IPAddress[] ips = Dns.GetHostAddresses("montelibano-cordoba.softwaretributario.com");
+            
             string DESTINO = "PTributario";
             string ORIGEN = "PTributario_Base";
             string currentPath = System.IO.Directory.GetCurrentDirectory();
@@ -53,8 +57,11 @@ namespace ConsoleApplication1
         //CREA LOS PARAMETROS DE CONEXION CON LA BASE DE DATOS RECIBE BASE,DIRECCION,USUARIO,CONTRASEÑA
         private static string GetConecciont(string DataBase)
         {
+            
+            //string conectionstring = "Data Source=190.190.200.100,1433;Network Library=DBMSSOCN;Initial Catalog=myDataBase;User ID=myUsername;Password=myPassword;"
             SqlConnectionStringBuilder builderconnection = new SqlConnectionStringBuilder();
-            builderconnection.DataSource = ".\\DAIBERP,1433";
+
+            builderconnection.DataSource = "190.146.201.27:8051\\DAIBERP\\DAIBERP,1433";
             builderconnection.InitialCatalog = DataBase;
             builderconnection.IntegratedSecurity = false;
             builderconnection.UserID = "PruebaCShardP";
@@ -361,6 +368,10 @@ namespace ConsoleApplication1
             else if (type.Equals("Atributtes"))
             {
                 a = Root.Replace(Root = "\\Debug", "\\Debug\\SqlAtributtes.sql");
+            }
+            else if (type.Equals("GetConnetion"))
+            {
+                a = Root.Replace(Root = "\\Debug", "");
             }
             else if (type.Equals("AtributtesLength"))
             {
