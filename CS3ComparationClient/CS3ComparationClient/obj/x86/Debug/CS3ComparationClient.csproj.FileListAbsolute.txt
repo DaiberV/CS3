@@ -1,0 +1,6 @@
+C:\Users\Desarrollo\Documents\Visual Studio 2010\Projects\CS3ComparationClient\CS3ComparationClient\bin\Debug\CS3ComparationClient.exe
+C:\Users\Desarrollo\Documents\Visual Studio 2010\Projects\CS3ComparationClient\CS3ComparationClient\bin\Debug\CS3ComparationClient.pdb
+C:\Users\Desarrollo\Documents\Visual Studio 2010\Projects\CS3ComparationClient\CS3ComparationClient\obj\x86\Debug\CS3ComparationClient.exe
+C:\Users\Desarrollo\Documents\Visual Studio 2010\Projects\CS3ComparationClient\CS3ComparationClient\obj\x86\Debug\CS3ComparationClient.pdb
+C:\Users\Desarrollo\Documents\Visual Studio 2010\Projects\CS3ComparationClient\CS3ComparationClient\bin\Debug\CS3ComparationClient.exe.config
+C:\Users\Desarrollo\Documents\Visual Studio 2010\Projects\CS3ComparationClient\CS3ComparationClient\obj\x86\Debug\CS3ComparationClient.csprojResolveAssemblyReference.cache

@@ -1,0 +1,5 @@
+C:\Users\Desarrollo\Desktop\gitCs3\CS3\ConsoleApplication1\ConsoleApplication1\bin\Debug\CS3Comparation.exe.config
+C:\Users\Desarrollo\Desktop\gitCs3\CS3\ConsoleApplication1\ConsoleApplication1\bin\Debug\CS3Comparation.exe
+C:\Users\Desarrollo\Desktop\gitCs3\CS3\ConsoleApplication1\ConsoleApplication1\bin\Debug\CS3Comparation.pdb
+C:\Users\Desarrollo\Desktop\gitCs3\CS3\ConsoleApplication1\ConsoleApplication1\obj\x86\Debug\CS3Comparation.exe
+C:\Users\Desarrollo\Desktop\gitCs3\CS3\ConsoleApplication1\ConsoleApplication1\obj\x86\Debug\CS3Comparation.pdb

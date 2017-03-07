@@ -1,0 +1,1 @@
+SELECT icol.name FROM <<ORIGEN>>.sys.Tables as ini INNER JOIN <<ORIGEN>>.sys.Columns as icol On ini.object_id=icol.object_id;

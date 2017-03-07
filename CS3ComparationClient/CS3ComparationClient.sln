@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS3Comparation", "ConsoleApplication1\CS3Comparation.csproj", "{1BA3E279-CFF6-48B6-8185-93C6FD066711}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS3ComparationClient", "CS3ComparationClient\CS3ComparationClient.csproj", "{364CFB7C-9F3D-4EB1-872E-66E5C1222668}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS3Comparation", "..\..\..\..\Desktop\gitCs3\CS3\ConsoleApplication1\ConsoleApplication1\CS3Comparation.csproj", "{1BA3E279-CFF6-48B6-8185-93C6FD066711}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,6 +11,10 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{364CFB7C-9F3D-4EB1-872E-66E5C1222668}.Debug|x86.ActiveCfg = Debug|x86
+		{364CFB7C-9F3D-4EB1-872E-66E5C1222668}.Debug|x86.Build.0 = Debug|x86
+		{364CFB7C-9F3D-4EB1-872E-66E5C1222668}.Release|x86.ActiveCfg = Release|x86
+		{364CFB7C-9F3D-4EB1-872E-66E5C1222668}.Release|x86.Build.0 = Release|x86
 		{1BA3E279-CFF6-48B6-8185-93C6FD066711}.Debug|x86.ActiveCfg = Debug|x86
 		{1BA3E279-CFF6-48B6-8185-93C6FD066711}.Debug|x86.Build.0 = Debug|x86
 		{1BA3E279-CFF6-48B6-8185-93C6FD066711}.Release|x86.ActiveCfg = Release|x86
