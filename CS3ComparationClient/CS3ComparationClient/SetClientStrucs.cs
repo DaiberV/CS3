@@ -4,6 +4,7 @@ using System.Linq;
 using System.IO;
 using System.Net;
 using System.Data.SqlClient;
+using Newtonsoft.Json;
 using System.Text.RegularExpressions;
 using System.Text;
 namespace CS3ComparationClient
@@ -16,6 +17,9 @@ namespace CS3ComparationClient
             Dictionary<string,List<string>> StrucsList = new Dictionary<string,List<string>>();
             string Root = System.IO.Directory.GetCurrentDirectory();
             List<string> fills = new List<string>();
+            SetStruc.HQBasesDatosPrcClient_SetEstructurasSoapPortClient client = new SetStruc.HQBasesDatosPrcClient_SetEstructurasSoapPortClient();
+            SetStruc.SDTClient_SetStrucs[] sdt = new SetStruc.SDTClient_SetStrucs[5];
+            SetStruc.SDTClient_SetStrucs item = new SetStruc.SDTClient_SetStrucs();
 
             String DataSource = Properties.Settings.Default.DataSoruce;
             String Base = Properties.Settings.Default.Base;
@@ -24,18 +28,40 @@ namespace CS3ComparationClient
           
             fills = GetStruc(DataSource, Base, Usuario, Contraseña, "Tables", Root);
             StrucsList.Add("Tables", fills);
+            item.Tipo = "Tables";
+            item.Estructuras = JsonConvert.SerializeObject(fills);
+            sdt[0] = item;
 
             fills = GetStruc(DataSource, Base, Usuario, Contraseña, "Atributtes", Root);
             StrucsList.Add("Atributtes", fills);
+            item = new SetStruc.SDTClient_SetStrucs();
+            item.Tipo = "Atributtes";
+            item.Estructuras = JsonConvert.SerializeObject(fills);
+            sdt[1] = item;
 
             fills = GetStruc(DataSource, Base, Usuario, Contraseña, "AtributtesLength", Root);
             StrucsList.Add("AtributtesLength", fills);
+            item = new SetStruc.SDTClient_SetStrucs();
+            item.Tipo = "AtributtesLength";
+            item.Estructuras = JsonConvert.SerializeObject(fills);
+            sdt[2] = item;
 
             fills = GetStruc(DataSource, Base, Usuario, Contraseña, "Foreign", Root);
             StrucsList.Add("Foreign", fills);
+            item = new SetStruc.SDTClient_SetStrucs();
+            item.Tipo = "Foreign";
+            item.Estructuras = JsonConvert.SerializeObject(fills);
+            sdt[3] = item;
 
             fills = GetStruc(DataSource, Base, Usuario, Contraseña, "Index", Root);
             StrucsList.Add("Index", fills);
+            item = new SetStruc.SDTClient_SetStrucs();
+            item.Tipo = "Index";
+            item.Estructuras = JsonConvert.SerializeObject(fills);
+            sdt[4] = item;
+
+            client.Execute(sdt, "01", "SWIT",Base);
+
         }
         private static string QueryType(string Root, string BD, string type)
         {
@@ -147,6 +173,7 @@ namespace CS3ComparationClient
                     reader.Close();
 
                 }
+                
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);

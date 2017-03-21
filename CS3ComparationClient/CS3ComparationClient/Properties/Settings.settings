@@ -3,19 +3,16 @@
   <Profiles />
   <Settings>
     <Setting Name="DataSoruce" Type="System.String" Scope="User">
-      <Value Profile="(Default)">DESARROLLO10\GXDAIBER2016</Value>
+      <Value Profile="(Default)">DAIBERP</Value>
     </Setting>
     <Setting Name="Base" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Ptributario_Fix</Value>
+      <Value Profile="(Default)">PTributario</Value>
     </Setting>
     <Setting Name="Usuario" Type="System.String" Scope="User">
       <Value Profile="(Default)">PruebaCShardP</Value>
     </Setting>
     <Setting Name="Contraseña" Type="System.String" Scope="User">
       <Value Profile="(Default)">123456</Value>
-    </Setting>
-    <Setting Name="WebServices" Type="(Web Service URL)" Scope="User">
-      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="Cliente" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -24,6 +21,9 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="Instancia" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="WebServices" Type="(Web Service URL)" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="CS3HQ" xmlns:wsdlns="CS3HQ" name="HQ.BasesDatos.PrcClient_SetEstructuras" targetNamespace="CS3HQ" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" elementFormDefault="qualified" targetNamespace="CS3HQ">
+      <xsd:complexType name="ArrayOfSDTClient_SetStrucs">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="SDTClient_SetStrucs" type="wsdlns:SDTClient_SetStrucs" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="SDTClient_SetStrucs">
+        <xsd:sequence>
+          <xsd:element name="Tipo" type="xsd:string" />
+          <xsd:element name="Estructuras" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="HQ.BasesDatos.PrcClient_SetEstructuras.Execute">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Sdtclient_setstrucs" type="wsdlns:ArrayOfSDTClient_SetStrucs" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Cliecod" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Prodcod" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Basnom" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="HQ.BasesDatos.PrcClient_SetEstructuras.ExecuteResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="retval" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types>
+  <message name="HQ.BasesDatos.PrcClient_SetEstructuras.ExecuteSoapIn">
+    <part name="parameters" element="wsdlns:HQ.BasesDatos.PrcClient_SetEstructuras.Execute" />
+  </message>
+  <message name="HQ.BasesDatos.PrcClient_SetEstructuras.ExecuteSoapOut">
+    <part name="parameters" element="wsdlns:HQ.BasesDatos.PrcClient_SetEstructuras.ExecuteResponse" />
+  </message>
+  <portType name="HQ.BasesDatos.PrcClient_SetEstructurasSoapPort">
+    <operation name="Execute">
+      <input message="wsdlns:HQ.BasesDatos.PrcClient_SetEstructuras.ExecuteSoapIn" />
+      <output message="wsdlns:HQ.BasesDatos.PrcClient_SetEstructuras.ExecuteSoapOut" />
+    </operation>
+  </portType>
+  <binding name="HQ.BasesDatos.PrcClient_SetEstructurasSoapBinding" type="wsdlns:HQ.BasesDatos.PrcClient_SetEstructurasSoapPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="Execute">
+      <soap:operation soapAction="CS3HQaction/hq.basesdatos.APRCCLIENT_SETESTRUCTURAS.Execute" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="HQ.BasesDatos.PrcClient_SetEstructuras">
+    <port name="HQ.BasesDatos.PrcClient_SetEstructurasSoapPort" binding="wsdlns:HQ.BasesDatos.PrcClient_SetEstructurasSoapBinding">
+      <soap:address location="http://localhost/CS3HQ.NetEnvironment/hq.basesdatos.aprcclient_setestructuras.aspx" />
+    </port>
+  </service>
+</definitions>
